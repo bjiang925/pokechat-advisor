@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: pokechat-backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./backend:/app/backend
+      - ./ml_models:/app/ml_models
+      - ./external:/app/external
+      - ./shared:/app/shared
+      - model_cache:/root/.cache/huggingface
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: pokechat-frontend
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    volumes:
+      - ./frontend:/app/frontend
+      - ./shared:/app/shared
+    depends_on:
+      backend:
+        condition: service_healthy
+    environment:
+      - BACKEND_API_URL=http://backend:8000
+
+volumes:
+  model_cache:
+    driver: local
