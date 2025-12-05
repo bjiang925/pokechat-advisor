@@ -7,9 +7,9 @@ pydantic-settings==2.1.0
 python-dotenv==1.0.0
 
 # ML/AI Dependencies
-transformers==4.37.2
-torch==2.1.2
-accelerate==0.26.1
+transformers==4.57.3
+torch==2.9.1
+accelerate==1.12.0
 
 # HTTP Client
 httpx==0.26.0
