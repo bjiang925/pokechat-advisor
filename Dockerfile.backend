@@ -18,6 +18,9 @@ COPY ml_models ./ml_models
 COPY external ./external
 COPY shared ./shared
 
+# Copy demo data file (if it exists)
+COPY demo_data.json ./demo_data.json
+
 # Create cache directory for models
 RUN mkdir -p /root/.cache/huggingface
 

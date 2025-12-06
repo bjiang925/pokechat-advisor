@@ -1,0 +1,276 @@
+{
+  "pikachu": {
+    "data": [
+      {
+        "id": "base1-58",
+        "name": "Pikachu",
+        "supertype": "Pokémon",
+        "subtypes": ["Basic"],
+        "hp": "60",
+        "types": ["Lightning"],
+        "weaknesses": [
+          {
+            "type": "Fighting",
+            "value": "×2"
+          }
+        ],
+        "retreatCost": ["Colorless"],
+        "set": {
+          "id": "base1",
+          "name": "Base Set",
+          "series": "Base",
+          "printedTotal": 102,
+          "total": 102
+        },
+        "number": "58",
+        "artist": "Mitsuhiro Arita",
+        "rarity": "Common",
+        "images": {
+          "small": "https://images.pokemontcg.io/base1/58.png",
+          "large": "https://images.pokemontcg.io/base1/58_hires.png"
+        },
+        "attacks": [
+          {
+            "name": "Gnaw",
+            "cost": ["Colorless"],
+            "convertedEnergyCost": 1,
+            "damage": "10",
+            "text": ""
+          },
+          {
+            "name": "Thunder Jolt",
+            "cost": ["Lightning", "Colorless"],
+            "convertedEnergyCost": 2,
+            "damage": "30",
+            "text": "Flip a coin. If tails, Pikachu does 10 damage to itself."
+          }
+        ]
+      }
+    ],
+    "page": 1,
+    "pageSize": 1,
+    "count": 1,
+    "totalCount": 250
+  },
+  "charizard": {
+    "data": [
+      {
+        "id": "base1-4",
+        "name": "Charizard",
+        "supertype": "Pokémon",
+        "subtypes": ["Stage2"],
+        "hp": "120",
+        "types": ["Fire"],
+        "evolvesFrom": "Charmeleon",
+        "abilities": [
+          {
+            "name": "Energy Burn",
+            "text": "As often as you like during your turn (before your attack), you may turn all Energy attached to Charizard into Fire Energy for the rest of the turn. This power can't be used if Charizard is Asleep, Confused, or Paralyzed.",
+            "type": "Pokémon Power"
+          }
+        ],
+        "weaknesses": [
+          {
+            "type": "Water",
+            "value": "×2"
+          }
+        ],
+        "resistances": [
+          {
+            "type": "Fighting",
+            "value": "-30"
+          }
+        ],
+        "retreatCost": ["Colorless", "Colorless", "Colorless"],
+        "set": {
+          "id": "base1",
+          "name": "Base Set",
+          "series": "Base",
+          "printedTotal": 102,
+          "total": 102
+        },
+        "number": "4",
+        "artist": "Mitsuhiro Arita",
+        "rarity": "Rare Holo",
+        "images": {
+          "small": "https://images.pokemontcg.io/base1/4.png",
+          "large": "https://images.pokemontcg.io/base1/4_hires.png"
+        },
+        "attacks": [
+          {
+            "name": "Fire Spin",
+            "cost": ["Fire", "Fire", "Fire", "Fire"],
+            "convertedEnergyCost": 4,
+            "damage": "100",
+            "text": "Discard 2 Energy cards attached to Charizard in order to use this attack."
+          }
+        ]
+      }
+    ],
+    "page": 1,
+    "pageSize": 1,
+    "count": 1,
+    "totalCount": 50
+  },
+  "mew": {
+    "data": [
+      {
+        "id": "base4-8",
+        "name": "Mew",
+        "supertype": "Pokémon",
+        "subtypes": ["Basic"],
+        "hp": "50",
+        "types": ["Psychic"],
+        "weaknesses": [
+          {
+            "type": "Psychic",
+            "value": "×2"
+          }
+        ],
+        "retreatCost": [],
+        "set": {
+          "id": "base4",
+          "name": "Base Set 2",
+          "series": "Base",
+          "printedTotal": 130,
+          "total": 130
+        },
+        "number": "8",
+        "artist": "Ken Sugimori",
+        "rarity": "Rare Holo",
+        "images": {
+          "small": "https://images.pokemontcg.io/base4/8.png",
+          "large": "https://images.pokemontcg.io/base4/8_hires.png"
+        },
+        "attacks": [
+          {
+            "name": "Psywave",
+            "cost": ["Psychic"],
+            "convertedEnergyCost": 1,
+            "damage": "10×",
+            "text": "Does 10 damage times the number of Energy cards attached to the Defending Pokémon."
+          },
+          {
+            "name": "Devolution Beam",
+            "cost": ["Psychic", "Psychic"],
+            "convertedEnergyCost": 2,
+            "damage": "",
+            "text": "Choose an evolved Pokémon (your own or your opponent's). Return the highest Stage Evolution card on that Pokémon to its player's hand. That Pokémon is no longer Asleep, Confused, Paralyzed, Poisoned, or anything else that might be the result of an attack (just as if you had evolved it)."
+          }
+        ]
+      }
+    ],
+    "page": 1,
+    "pageSize": 1,
+    "count": 1,
+    "totalCount": 30
+  },
+  "blastoise": {
+    "data": [
+      {
+        "id": "base1-2",
+        "name": "Blastoise",
+        "supertype": "Pokémon",
+        "subtypes": ["Stage2"],
+        "hp": "100",
+        "types": ["Water"],
+        "evolvesFrom": "Wartortle",
+        "abilities": [
+          {
+            "name": "Rain Dance",
+            "text": "As often as you like during your turn (before your attack), you may attach 1 Water Energy card to 1 of your Water Pokémon. (This doesn't use up your 1 Energy card attachment for the turn.) This power can't be used if Blastoise is Asleep, Confused, or Paralyzed.",
+            "type": "Pokémon Power"
+          }
+        ],
+        "weaknesses": [
+          {
+            "type": "Lightning",
+            "value": "×2"
+          }
+        ],
+        "retreatCost": ["Colorless", "Colorless", "Colorless"],
+        "set": {
+          "id": "base1",
+          "name": "Base Set",
+          "series": "Base",
+          "printedTotal": 102,
+          "total": 102
+        },
+        "number": "2",
+        "artist": "Ken Sugimori",
+        "rarity": "Rare Holo",
+        "images": {
+          "small": "https://images.pokemontcg.io/base1/2.png",
+          "large": "https://images.pokemontcg.io/base1/2_hires.png"
+        },
+        "attacks": [
+          {
+            "name": "Hydro Pump",
+            "cost": ["Water", "Water", "Water"],
+            "convertedEnergyCost": 3,
+            "damage": "40+",
+            "text": "Does 40 damage plus 10 more damage for each Water Energy attached to Blastoise but not used to pay for this attack's Energy cost. Extra Water Energy after the 2nd doesn't count."
+          }
+        ]
+      }
+    ],
+    "page": 1,
+    "pageSize": 1,
+    "count": 1,
+    "totalCount": 25
+  },
+  "venusaur": {
+    "data": [
+      {
+        "id": "base1-15",
+        "name": "Venusaur",
+        "supertype": "Pokémon",
+        "subtypes": ["Stage2"],
+        "hp": "100",
+        "types": ["Grass"],
+        "evolvesFrom": "Ivysaur",
+        "abilities": [
+          {
+            "name": "Energy Trans",
+            "text": "As often as you like during your turn (before your attack), you may take 1 Grass Energy card attached to 1 of your Pokémon and attach it to a different one. This power can't be used if Venusaur is Asleep, Confused, or Paralyzed.",
+            "type": "Pokémon Power"
+          }
+        ],
+        "weaknesses": [
+          {
+            "type": "Fire",
+            "value": "×2"
+          }
+        ],
+        "retreatCost": ["Colorless", "Colorless"],
+        "set": {
+          "id": "base1",
+          "name": "Base Set",
+          "series": "Base",
+          "printedTotal": 102,
+          "total": 102
+        },
+        "number": "15",
+        "artist": "Mitsuhiro Arita",
+        "rarity": "Rare Holo",
+        "images": {
+          "small": "https://images.pokemontcg.io/base1/15.png",
+          "large": "https://images.pokemontcg.io/base1/15_hires.png"
+        },
+        "attacks": [
+          {
+            "name": "Solarbeam",
+            "cost": ["Grass", "Grass", "Grass", "Grass"],
+            "convertedEnergyCost": 4,
+            "damage": "60",
+            "text": ""
+          }
+        ]
+      }
+    ],
+    "page": 1,
+    "pageSize": 1,
+    "count": 1,
+    "totalCount": 20
+  }
+}
