@@ -19,10 +19,24 @@ async def lifespan(app: FastAPI):
     Lifespan context manager for startup and shutdown events.
     """
     # Startup: Load the model
+    print("="*60)
     print("Starting up PokéChat Advisor Backend...")
-    print("Loading Qwen3-0.6B model...")
+    print("="*60)
+    
+    # Print environment info
+    import os
+    print(f"POKEMON_TCG_API_URL: {os.getenv('POKEMON_TCG_API_URL', 'NOT SET')}")
+    api_key = os.getenv('POKEMON_TCG_API_KEY', '')
+    if api_key and len(api_key) > 4:
+        print(f"POKEMON_TCG_API_KEY: {api_key[:4]}...{api_key[-4:]} (length: {len(api_key)})")
+    else:
+        print("POKEMON_TCG_API_KEY: NOT SET or PLACEHOLDER")
+    
+    print("\nLoading Qwen3-0.6B model...")
     model_manager.load_model()
     print("Model loaded successfully!")
+    
+    print("="*60)
     
     yield
     

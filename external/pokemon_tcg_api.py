@@ -15,13 +15,20 @@ class PokemonTCGAPIClient:
         self.base_url = os.getenv("POKEMON_TCG_API_URL", "https://api.pokemontcg.io/v2")
         self.api_key = os.getenv("POKEMON_TCG_API_KEY", "")
         
+        # Debug: Print API key status (first 4 chars only for security)
+        if self.api_key and len(self.api_key) > 4:
+            print(f"API Key loaded: {self.api_key[:4]}...")
+        else:
+            print("WARNING: No API key loaded. Rate limits will apply.")
+        
         self.headers = {
             "Content-Type": "application/json"
         }
         
         # Add API key to headers if available
-        if self.api_key:
+        if self.api_key and self.api_key != "your_api_key_here":
             self.headers["X-Api-Key"] = self.api_key
+            print("API Key added to headers")
     
     async def search_cards(
         self, 
@@ -48,6 +55,10 @@ class PokemonTCGAPIClient:
             "page": page
         }
         
+        print(f"Calling API: {endpoint}")
+        print(f"Query: {query}")
+        print(f"Headers: {self.headers}")
+        
         try:
             async with AsyncClient(timeout=30.0) as client:
                 response = await client.get(
@@ -55,24 +66,39 @@ class PokemonTCGAPIClient:
                     headers=self.headers,
                     params=params
                 )
+                
+                print(f"Response status: {response.status_code}")
+                print(f"Response headers: {dict(response.headers)}")
+                
                 response.raise_for_status()
-                return response.json()
+                data = response.json()
+                print(f"Response data keys: {data.keys() if data else 'None'}")
+                return data
         
         except httpx.HTTPStatusError as e:
-            return {
+            error_detail = {
                 "error": f"HTTP error occurred: {e.response.status_code}",
-                "message": str(e)
+                "message": str(e),
+                "response_text": e.response.text[:500]
             }
+            print(f"HTTPStatusError: {error_detail}")
+            return error_detail
         except httpx.RequestError as e:
-            return {
+            error_detail = {
                 "error": "Request error occurred",
-                "message": str(e)
+                "message": str(e),
+                "type": type(e).__name__
             }
+            print(f"RequestError: {error_detail}")
+            return error_detail
         except Exception as e:
-            return {
+            error_detail = {
                 "error": "Unexpected error occurred",
-                "message": str(e)
+                "message": str(e),
+                "type": type(e).__name__
             }
+            print(f"Exception: {error_detail}")
+            return error_detail
     
     async def get_card_by_id(self, card_id: str) -> Dict[str, Any]:
         """
